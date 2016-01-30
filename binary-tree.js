@@ -154,30 +154,24 @@ class BinaryTree {
 						currentNode.right = null;
 					}
 				}
-				/*else
+				else
 				{
-					//removenode2(currentNode.right, currentNode);
-					//var parentOfMinNode = findmin(currentNode.right.right, currentNode);
-					var parentOfMinNode = function(current, parent)
+					var minNode = function(parentOfMinNode)
 					{
-						if (current.left == null)
+						if (parentOfMinNode.left.left == null)
 						{
-							return parent;
+							return parentOfMinNode;
 						}
 						else
 						{
-							parent = current;
-							current = current.left;
-							findmin(current, parent);
+							minNode(parentOfMinNode.left);
 						}
-					}
-					var pnode = parentOfMinNode(currentNode.right.right, currentNode);
-					var minNode = pnode.left;
-					pnode.left = null;
-					parentNode.data = minNode.data;
-				}*/
+					};
+					var parentOfMin = minNode(currentNode.right);
+					currentNode.data = parentOfMin.left.data;
+					parentOfMin.left = null;
+				}				
 			}
-
 			else
 			{
 				if (parentNode.right == currentNode)
@@ -201,12 +195,9 @@ class BinaryTree {
 					{
 						parentNode.left = currentNode.left;
 					}
-				}
-			
+				}			
 			}
-
 		}
-
 	}
 
 	size() {

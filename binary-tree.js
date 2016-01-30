@@ -209,30 +209,6 @@ class BinaryTree {
 
 	}
 
-/*removenode2(curNode, parNode)
-	{
-		var parentOfMinNode = findmin(curNode.right, currentNode);
-		var minNode = parentOfMinNode.left;
-		parentOfMinNode.left = null;
-		parentNode.data = minNode.data;
-	}
-
-	findmin(currentRoot, parentOfCurrentNode) {
-		if (currentRoot.left == null)
-		{
-			return parentOfCurrentNode;
-		}
-		else
-		{
-			parentOfCurrentNode = currentRoot;
-			currentRoot = currentRoot.left;
-			findmin(currentRoot, parentOfCurrentNode);
-		}
-	}
-
-	
-*/	
-
 	size() {
 
 		var elemCount = 0;
